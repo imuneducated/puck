@@ -1,17 +1,30 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>PUCK 웹사이트</title>
+  <title>Main</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #fff;
+      font-family: sans-serif;
+    }
+
+    .main-image {
+      display: block;
+      margin: 100px auto;
+      width: 60%;
+      max-width: 600px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-  <h1 style="text-align: center;">studio</h1>
-  <p style="color: red; text-align: center;">반갑다이씨발로마</p>
 
-  <div style="text-align: center;">
-    <a href="about.html">
-      <img src="images/main1.jpg" alt="룩북" width="800" style="display: inline-block;">
-    </a>
-  </div>
+  <!-- 클릭 시 shop.html로 이동 -->
+  <a href="shop.html">
+    <img src="main.jpg" alt="Go to shop" class="main-image">
+  </a>
+
 </body>
 </html>
