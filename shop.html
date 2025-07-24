@@ -1,87 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <title>Shop</title>
+  <meta charset="UTF-8" />
+  <title>Shop 페이지</title>
   <style>
     body {
       margin: 0;
-      font-family: sans-serif;
+      font-family: 'Helvetica Neue', sans-serif;
+      background: #fff;
+      overflow-x: hidden;
     }
 
-    /* 좌측 상단 shop 텍스트 */
-    .shop-label {
-      position: fixed;
+    #shopBtn {
+      position: absolute;
       top: 20px;
       left: 20px;
-      font-size: 14px;
+      font-size: 12px;
+      font-weight: 300;
       cursor: pointer;
       z-index: 2;
     }
 
-    /* 가운데 이미지 */
-    .center-image {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-
-    /* 슬라이드 메뉴 */
-    .slide-menu {
+    #menu {
       position: fixed;
       top: 0;
       left: -200px;
       width: 200px;
       height: 100%;
-      background-color: #f5f5f5;
-      box-shadow: 2px 0 5px rgba(0,0,0,0.1);
-      transition: left 0.4s ease;
-      padding: 60px 20px;
+      background-color: #eee;
+      transition: left 0.3s ease;
+      padding-top: 60px;
+      box-shadow: 2px 0 8px rgba(0,0,0,0.1);
     }
 
-    .slide-menu.show {
+    #menu.open {
       left: 0;
     }
 
-    .slide-menu ul {
+    #menu ul {
       list-style: none;
       padding: 0;
-      margin: 0;
     }
 
-    .slide-menu li {
-      margin-bottom: 20px;
-      font-size: 16px;
+    #menu li {
+      padding: 12px 24px;
+      border-bottom: 1px solid #ccc;
       cursor: pointer;
+    }
+
+    #mainImage {
+      width: 400px;
+      max-width: 80%;
+      display: block;
+      margin: 120px auto;
     }
   </style>
 </head>
 <body>
+  <div id="shopBtn" onclick="toggleMenu()">shop</div>
 
-  <!-- 상단 좌측 텍스트 -->
-  <div class="shop-label" onclick="toggleMenu()">shop</div>
-
-  <!-- 슬라이드 메뉴 -->
-  <div id="slideMenu" class="slide-menu">
+  <div id="menu">
     <ul>
-      <li>top</li>
-      <li>bottom</li>
-      <li>accessory</li>
+      <li>Top</li>
+      <li>Bottom</li>
+      <li>Accessory</li>
     </ul>
   </div>
 
-  <!-- 가운데 이미지 -->
-  <div class="center-image">
-    <img src="your-image.jpg" alt="shop image" style="width: 60%; max-width: 600px;">
-  </div>
-
+  <img id="mainImage" src="your-image.jpg" alt="Main" />
+  
   <script>
     function toggleMenu() {
-      const menu = document.getElementById("slideMenu");
-      menu.classList.toggle("show");
+      const menu = document.getElementById('menu');
+      menu.classList.toggle('open');
     }
   </script>
-
 </body>
 </html>
